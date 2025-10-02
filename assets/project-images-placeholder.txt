@@ -1,0 +1,35 @@
+PROJECT IMAGE PLACEHOLDERS
+
+Add the following project images to this folder:
+
+1. project1.jpg - Smart Agriculture IoT System
+   - Show React dashboard, IoT sensors, or AI detection interface
+   - Size: 800x600 pixels (landscape)
+
+2. project2.jpg - EE256 Engineering Analysis
+   - Python code screenshots, mathematical plots, or engineering calculations
+   - Size: 800x600 pixels (landscape)
+
+3. project3.jpg - Problem Solving & Algorithms
+   - Code screenshots from CSES/LeetCode, algorithm visualizations, or data structures
+   - Size: 800x600 pixels (landscape)
+
+4. project4.jpg - C Programming Fundamentals
+   - C code screenshots, terminal output, or programming concepts
+   - Size: 800x600 pixels (landscape)
+
+5. project5.jpg - ME210 Thermodynamics
+   - Python thermodynamics calculations, graphs, or engineering analysis
+   - Size: 800x600 pixels (landscape)
+
+6. project6.jpg - Personal Portfolio Website
+   - Screenshot of this website, responsive design, or code editor
+   - Size: 800x600 pixels (landscape)
+
+Alternative: If you don't have project photos, you can use:
+- Screenshots of your code repositories
+- GitHub repository pages
+- Code editor screenshots
+- Project documentation
+- Results or output visualizations
+- System architecture diagrams
