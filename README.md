@@ -1,6 +1,6 @@
 # Loshitha Udana - Personal Portfolio Website
 
-A beautiful, responsive portfolio website for Loshitha Udana, Electrical & Electronic Engineering undergraduate at University of Peradeniya.
+A  responsive portfolio website for Loshitha Udana, Electrical & Electronic Engineering undergraduate at University of Peradeniya.
 
 ## Features
 
