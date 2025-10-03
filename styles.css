@@ -27,11 +27,12 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(26, 26, 46, 0.95);
-    backdrop-filter: blur(10px);
+    background: rgba(15, 15, 35, 0.98);
+    backdrop-filter: blur(15px);
     z-index: 1000;
     transition: all 0.3s ease;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 2px solid rgba(255, 107, 157, 0.2);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
 }
 
 .nav-container {
@@ -46,8 +47,13 @@ body {
 
 .nav-logo h2 {
     color: #ff6b9d;
-    font-weight: 600;
-    font-size: 1.5rem;
+    font-weight: 700;
+    font-size: 1.6rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(45deg, #ff6b9d, #00d2d3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .nav-menu {
@@ -58,28 +64,36 @@ body {
 .nav-link {
     text-decoration: none;
     color: #ffffff;
-    font-weight: 500;
-    transition: color 0.3s ease;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    transition: all 0.3s ease;
     position: relative;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .nav-link:hover {
-    color: #00d2d3;
+    color: #ffffff;
+    background: rgba(255, 107, 157, 0.2);
+    transform: translateY(-2px);
 }
 
 .nav-link::after {
     content: '';
     position: absolute;
-    bottom: -5px;
-    left: 0;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
     width: 0;
-    height: 2px;
+    height: 3px;
     background: linear-gradient(45deg, #ff6b9d, #00d2d3);
+    border-radius: 2px;
     transition: width 0.3s ease;
 }
 
 .nav-link:hover::after {
-    width: 100%;
+    width: 80%;
 }
 
 .nav-toggle {
@@ -978,12 +992,14 @@ body {
         left: -100%;
         top: 70px;
         flex-direction: column;
-        background-color: white;
+        background: rgba(15, 15, 35, 0.98);
+        backdrop-filter: blur(15px);
         width: 100%;
         text-align: center;
         transition: 0.3s;
-        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.3);
         padding: 2rem 0;
+        border-bottom: 2px solid rgba(255, 107, 157, 0.2);
     }
 
     .nav-menu.active {

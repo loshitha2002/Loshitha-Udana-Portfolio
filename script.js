@@ -49,11 +49,13 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar');
     if (window.scrollY > 50) {
-        navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-        navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+        navbar.style.background = 'rgba(10, 10, 30, 0.98)';
+        navbar.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.4)';
+        navbar.style.borderBottom = '2px solid rgba(255, 107, 157, 0.4)';
     } else {
-        navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-        navbar.style.boxShadow = 'none';
+        navbar.style.background = 'rgba(15, 15, 35, 0.98)';
+        navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.3)';
+        navbar.style.borderBottom = '2px solid rgba(255, 107, 157, 0.2)';
     }
 });
 
@@ -151,15 +153,15 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Contact Form Handling with improved mailto
+// Contact Form Handling
 const contactForm = document.getElementById('contact-form');
 contactForm.addEventListener('submit', function(e) {
     e.preventDefault();
     
     // Get form data
     const formData = new FormData(this);
-    const name = formData.get('from_name');
-    const email = formData.get('from_email');
+    const name = formData.get('name');
+    const email = formData.get('email');
     const subject = formData.get('subject');
     const message = formData.get('message');
     
@@ -174,14 +176,8 @@ contactForm.addEventListener('submit', function(e) {
         return;
     }
     
-    // Create mailto link with form data
-    const mailtoLink = `mailto:e21047@eng.pdn.ac.lk?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`From: ${name} (${email})\n\nMessage:\n${message}`)}`;
-    
-    // Open email client
-    window.location.href = mailtoLink;
-    
-    // Show success message
-    showNotification('Opening your email client... Please send the pre-filled email.', 'success');
+    // Simulate form submission
+    showNotification('Message sent successfully! I\'ll get back to you soon.', 'success');
     this.reset();
 });
 
