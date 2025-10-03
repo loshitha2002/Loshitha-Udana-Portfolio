@@ -24,22 +24,14 @@ A stunning, modern portfolio website showcasing the work and achievements of **L
 ### 🏆 **Achievements Section**
 - **Competitive Programming** accomplishments:
   - **IEEE Xtreme 18.0** - Top 100 in Sri Lanka
-  - **UOJ Coders 5.0** - 1st Place
-  - **Mora Xtreme 5.0** - 2nd Place
+  - **UOJ Coders 3.0** - 5th Place
+  - **Mora Xtreme 9.0** - 48th out of 350+
 - **Animated achievement cards** with hover effects
 - **Professional recognition** display
 
-### 🚀 **Projects Gallery**
-Real GitHub projects with beautiful presentation:
-- **Smart Agriculture IoT System** - IoT and sensor integration
-- **EE256 Labs** - Microprocessor systems and embedded programming
-- **Problem-Solving** - Competitive programming solutions
-- **C-Programming** - Data structures and algorithms
-- **Staggered animations** and 3D hover effects
-- **GitHub integration** with direct project links
 
 ### 🛠️ **Skills Showcase**
-- **Programming Languages**: C, C++, Python, Java, MATLAB
+- **Programming Languages**: C, C++, Python, Java
 - **Electronics & Hardware**: Circuit Design, PCB Design, IoT
 - **Software & Tools**: Git, VS Code, Proteus, KiCad
 - **Animated skill icons** with 3D rotation effects
