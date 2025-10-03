@@ -103,7 +103,79 @@ window.addEventListener('load', () => {
         const originalText = titleElement.innerHTML;
         typeWriter(titleElement, originalText, 50);
     }
+    
+    // Initialize animated counters
+    initAnimatedCounters();
+    
+    // Initialize scroll animations
+    initScrollAnimations();
 });
+
+// Animated Counter Function
+function animateCounter(element, target, duration = 2000) {
+    let start = 0;
+    const increment = target / (duration / 16);
+    
+    function updateCounter() {
+        start += increment;
+        if (start < target) {
+            element.textContent = Math.floor(start);
+            requestAnimationFrame(updateCounter);
+        } else {
+            element.textContent = target;
+        }
+    }
+    updateCounter();
+}
+
+// Initialize Animated Counters
+function initAnimatedCounters() {
+    const counters = document.querySelectorAll('.stat-item h3');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const counter = entry.target;
+                const text = counter.textContent;
+                const numbers = text.match(/[\d.]+/);
+                
+                if (numbers) {
+                    const target = parseFloat(numbers[0]);
+                    const suffix = text.replace(numbers[0], '');
+                    
+                    // Start animation
+                    animateCounter(counter, target, 2000);
+                    
+                    // Add suffix back after animation
+                    setTimeout(() => {
+                        counter.textContent = target + suffix;
+                    }, 2000);
+                }
+                
+                observer.unobserve(counter);
+            }
+        });
+    }, { threshold: 0.5 });
+    
+    counters.forEach(counter => observer.observe(counter));
+}
+
+// Scroll Animation Observer
+function initScrollAnimations() {
+    const animatedElements = document.querySelectorAll('.skill-item, .project-card, .achievement-card');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.animationPlayState = 'running';
+            }
+        });
+    }, { threshold: 0.1 });
+    
+    animatedElements.forEach(element => {
+        element.style.animationPlayState = 'paused';
+        observer.observe(element);
+    });
+}
 
 // Skill Bar Animation
 function animateSkillBars() {
@@ -412,3 +484,51 @@ function createParticles() {
 
 // Initialize particles effect
 document.addEventListener('DOMContentLoaded', createParticles);
+
+// Create Scroll to Top Button
+function createScrollToTopButton() {
+    const scrollBtn = document.createElement('button');
+    scrollBtn.className = 'scroll-to-top';
+    scrollBtn.innerHTML = '<i class="fas fa-arrow-up"></i>';
+    scrollBtn.setAttribute('aria-label', 'Scroll to top');
+    
+    scrollBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+    
+    document.body.appendChild(scrollBtn);
+    
+    // Show/hide scroll button
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 500) {
+            scrollBtn.classList.add('visible');
+        } else {
+            scrollBtn.classList.remove('visible');
+        }
+    });
+}
+
+// Enhanced animations for contact form
+function enhanceContactForm() {
+    const formInputs = document.querySelectorAll('.form-group input, .form-group textarea');
+    
+    formInputs.forEach(input => {
+        input.addEventListener('focus', function() {
+            this.parentElement.style.transform = 'scale(1.02)';
+            this.parentElement.style.transition = 'transform 0.3s ease';
+        });
+        
+        input.addEventListener('blur', function() {
+            this.parentElement.style.transform = 'scale(1)';
+        });
+    });
+}
+
+// Initialize all beauty enhancements
+document.addEventListener('DOMContentLoaded', () => {
+    createScrollToTopButton();
+    enhanceContactForm();
+});
