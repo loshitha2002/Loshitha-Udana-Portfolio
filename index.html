@@ -109,8 +109,8 @@
                 </div>
                 <div class="about-stats">
                     <div class="stat-item">
-                        <h3>3+</h3>
-                        <p>Years of Study</p>
+                        <h3>3.75</h3>
+                        <p>Current GPA</p>
                     </div>
                     <div class="stat-item">
                         <h3>10+</h3>
@@ -471,21 +471,19 @@
                         <p>Peradeniya, Sri Lanka</p>
                     </div>
                 </div>
-                <form class="contact-form" id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <form class="contact-form" id="contact-form" action="mailto:e21047@eng.pdn.ac.lk" method="post" enctype="text/plain">
                     <div class="form-group">
-                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" name="email" placeholder="Your Email" required>
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" name="subject" placeholder="Subject" required>
+                        <input type="text" id="subject" name="subject" placeholder="Subject" required>
                     </div>
                     <div class="form-group">
-                        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                        <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
                     </div>
-                    <input type="hidden" name="_next" value="https://loshitha2002.github.io/my-site/">
-                    <input type="hidden" name="_subject" value="New Contact from Portfolio Website">
                     <button type="submit" class="btn btn-primary">Send Message</button>
                 </form>
             </div>

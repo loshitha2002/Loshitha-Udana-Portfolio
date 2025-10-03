@@ -151,21 +151,38 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Contact Form Handling
+// Contact Form Handling with improved mailto
 const contactForm = document.getElementById('contact-form');
 contactForm.addEventListener('submit', function(e) {
-    // Let the form submit naturally to Formspree
-    // Show loading state
-    const submitBtn = this.querySelector('button[type="submit"]');
-    const originalText = submitBtn.textContent;
-    submitBtn.textContent = 'Sending...';
-    submitBtn.disabled = true;
+    e.preventDefault();
     
-    // Re-enable button after a delay (in case of errors)
-    setTimeout(() => {
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
-    }, 5000);
+    // Get form data
+    const formData = new FormData(this);
+    const name = formData.get('from_name');
+    const email = formData.get('from_email');
+    const subject = formData.get('subject');
+    const message = formData.get('message');
+    
+    // Simple validation
+    if (!name || !email || !subject || !message) {
+        showNotification('Please fill in all fields', 'error');
+        return;
+    }
+    
+    if (!isValidEmail(email)) {
+        showNotification('Please enter a valid email address', 'error');
+        return;
+    }
+    
+    // Create mailto link with form data
+    const mailtoLink = `mailto:e21047@eng.pdn.ac.lk?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`From: ${name} (${email})\n\nMessage:\n${message}`)}`;
+    
+    // Open email client
+    window.location.href = mailtoLink;
+    
+    // Show success message
+    showNotification('Opening your email client... Please send the pre-filled email.', 'success');
+    this.reset();
 });
 
 // Email validation
